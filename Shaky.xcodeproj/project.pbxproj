@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF2C6DA02AF80C4E00939447 /* ShakyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C6D9F2AF80C4E00939447 /* ShakyApp.swift */; };
+		FF2C6DA22AF80C4E00939447 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C6DA12AF80C4E00939447 /* ContentView.swift */; };
+		FF2C6DA42AF80C4F00939447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2C6DA32AF80C4F00939447 /* Assets.xcassets */; };
+		FF2C6DA72AF80C4F00939447 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2C6DA62AF80C4F00939447 /* Preview Assets.xcassets */; };
+		FF2C6DB12AF80C4F00939447 /* ShakyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C6DB02AF80C4F00939447 /* ShakyTests.swift */; };
+		FF2C6DBB2AF80C4F00939447 /* ShakyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C6DBA2AF80C4F00939447 /* ShakyUITests.swift */; };
+		FF2C6DBD2AF80C4F00939447 /* ShakyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C6DBC2AF80C4F00939447 /* ShakyUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF2C6DAD2AF80C4F00939447 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF2C6D942AF80C4E00939447 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF2C6D9B2AF80C4E00939447;
+			remoteInfo = Shaky;
+		};
+		FF2C6DB72AF80C4F00939447 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF2C6D942AF80C4E00939447 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF2C6D9B2AF80C4E00939447;
+			remoteInfo = Shaky;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FF2C6D9C2AF80C4E00939447 /* Shaky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shaky.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF2C6D9F2AF80C4E00939447 /* ShakyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyApp.swift; sourceTree = "<group>"; };
+		FF2C6DA12AF80C4E00939447 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF2C6DA32AF80C4F00939447 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF2C6DA62AF80C4F00939447 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF2C6DAC2AF80C4F00939447 /* ShakyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShakyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF2C6DB02AF80C4F00939447 /* ShakyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyTests.swift; sourceTree = "<group>"; };
+		FF2C6DB62AF80C4F00939447 /* ShakyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShakyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF2C6DBA2AF80C4F00939447 /* ShakyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyUITests.swift; sourceTree = "<group>"; };
+		FF2C6DBC2AF80C4F00939447 /* ShakyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF2C6D992AF80C4E00939447 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF2C6DA92AF80C4F00939447 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF2C6DB32AF80C4F00939447 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF2C6D932AF80C4E00939447 = {
+			isa = PBXGroup;
+			children = (
+				FF2C6D9E2AF80C4E00939447 /* Shaky */,
+				FF2C6DAF2AF80C4F00939447 /* ShakyTests */,
+				FF2C6DB92AF80C4F00939447 /* ShakyUITests */,
+				FF2C6D9D2AF80C4E00939447 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF2C6D9D2AF80C4E00939447 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF2C6D9C2AF80C4E00939447 /* Shaky.app */,
+				FF2C6DAC2AF80C4F00939447 /* ShakyTests.xctest */,
+				FF2C6DB62AF80C4F00939447 /* ShakyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF2C6D9E2AF80C4E00939447 /* Shaky */ = {
+			isa = PBXGroup;
+			children = (
+				FF2C6D9F2AF80C4E00939447 /* ShakyApp.swift */,
+				FF2C6DA12AF80C4E00939447 /* ContentView.swift */,
+				FF2C6DA32AF80C4F00939447 /* Assets.xcassets */,
+				FF2C6DA52AF80C4F00939447 /* Preview Content */,
+			);
+			path = Shaky;
+			sourceTree = "<group>";
+		};
+		FF2C6DA52AF80C4F00939447 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FF2C6DA62AF80C4F00939447 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF2C6DAF2AF80C4F00939447 /* ShakyTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF2C6DB02AF80C4F00939447 /* ShakyTests.swift */,
+			);
+			path = ShakyTests;
+			sourceTree = "<group>";
+		};
+		FF2C6DB92AF80C4F00939447 /* ShakyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FF2C6DBA2AF80C4F00939447 /* ShakyUITests.swift */,
+				FF2C6DBC2AF80C4F00939447 /* ShakyUITestsLaunchTests.swift */,
+			);
+			path = ShakyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF2C6D9B2AF80C4E00939447 /* Shaky */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF2C6DC02AF80C4F00939447 /* Build configuration list for PBXNativeTarget "Shaky" */;
+			buildPhases = (
+				FF2C6D982AF80C4E00939447 /* Sources */,
+				FF2C6D992AF80C4E00939447 /* Frameworks */,
+				FF2C6D9A2AF80C4E00939447 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Shaky;
+			productName = Shaky;
+			productReference = FF2C6D9C2AF80C4E00939447 /* Shaky.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF2C6DAB2AF80C4F00939447 /* ShakyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF2C6DC32AF80C4F00939447 /* Build configuration list for PBXNativeTarget "ShakyTests" */;
+			buildPhases = (
+				FF2C6DA82AF80C4F00939447 /* Sources */,
+				FF2C6DA92AF80C4F00939447 /* Frameworks */,
+				FF2C6DAA2AF80C4F00939447 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF2C6DAE2AF80C4F00939447 /* PBXTargetDependency */,
+			);
+			name = ShakyTests;
+			productName = ShakyTests;
+			productReference = FF2C6DAC2AF80C4F00939447 /* ShakyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FF2C6DB52AF80C4F00939447 /* ShakyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF2C6DC62AF80C4F00939447 /* Build configuration list for PBXNativeTarget "ShakyUITests" */;
+			buildPhases = (
+				FF2C6DB22AF80C4F00939447 /* Sources */,
+				FF2C6DB32AF80C4F00939447 /* Frameworks */,
+				FF2C6DB42AF80C4F00939447 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF2C6DB82AF80C4F00939447 /* PBXTargetDependency */,
+			);
+			name = ShakyUITests;
+			productName = ShakyUITests;
+			productReference = FF2C6DB62AF80C4F00939447 /* ShakyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF2C6D942AF80C4E00939447 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					FF2C6D9B2AF80C4E00939447 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					FF2C6DAB2AF80C4F00939447 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = FF2C6D9B2AF80C4E00939447;
+					};
+					FF2C6DB52AF80C4F00939447 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = FF2C6D9B2AF80C4E00939447;
+					};
+				};
+			};
+			buildConfigurationList = FF2C6D972AF80C4E00939447 /* Build configuration list for PBXProject "Shaky" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF2C6D932AF80C4E00939447;
+			productRefGroup = FF2C6D9D2AF80C4E00939447 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF2C6D9B2AF80C4E00939447 /* Shaky */,
+				FF2C6DAB2AF80C4F00939447 /* ShakyTests */,
+				FF2C6DB52AF80C4F00939447 /* ShakyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF2C6D9A2AF80C4E00939447 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF2C6DA72AF80C4F00939447 /* Preview Assets.xcassets in Resources */,
+				FF2C6DA42AF80C4F00939447 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF2C6DAA2AF80C4F00939447 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF2C6DB42AF80C4F00939447 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF2C6D982AF80C4E00939447 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF2C6DA22AF80C4E00939447 /* ContentView.swift in Sources */,
+				FF2C6DA02AF80C4E00939447 /* ShakyApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF2C6DA82AF80C4F00939447 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF2C6DB12AF80C4F00939447 /* ShakyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF2C6DB22AF80C4F00939447 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF2C6DBB2AF80C4F00939447 /* ShakyUITests.swift in Sources */,
+				FF2C6DBD2AF80C4F00939447 /* ShakyUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF2C6DAE2AF80C4F00939447 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF2C6D9B2AF80C4E00939447 /* Shaky */;
+			targetProxy = FF2C6DAD2AF80C4F00939447 /* PBXContainerItemProxy */;
+		};
+		FF2C6DB82AF80C4F00939447 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF2C6D9B2AF80C4E00939447 /* Shaky */;
+			targetProxy = FF2C6DB72AF80C4F00939447 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FF2C6DBE2AF80C4F00939447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF2C6DBF2AF80C4F00939447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF2C6DC12AF80C4F00939447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Shaky/Preview Content\"";
+				DEVELOPMENT_TEAM = QJPF9VAGLS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.mesut.Shaky;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF2C6DC22AF80C4F00939447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Shaky/Preview Content\"";
+				DEVELOPMENT_TEAM = QJPF9VAGLS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.mesut.Shaky;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FF2C6DC42AF80C4F00939447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QJPF9VAGLS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.mesut.ShakyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shaky.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Shaky";
+			};
+			name = Debug;
+		};
+		FF2C6DC52AF80C4F00939447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QJPF9VAGLS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.mesut.ShakyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shaky.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Shaky";
+			};
+			name = Release;
+		};
+		FF2C6DC72AF80C4F00939447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QJPF9VAGLS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.mesut.ShakyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Shaky;
+			};
+			name = Debug;
+		};
+		FF2C6DC82AF80C4F00939447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QJPF9VAGLS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.mesut.ShakyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Shaky;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF2C6D972AF80C4E00939447 /* Build configuration list for PBXProject "Shaky" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF2C6DBE2AF80C4F00939447 /* Debug */,
+				FF2C6DBF2AF80C4F00939447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF2C6DC02AF80C4F00939447 /* Build configuration list for PBXNativeTarget "Shaky" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF2C6DC12AF80C4F00939447 /* Debug */,
+				FF2C6DC22AF80C4F00939447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF2C6DC32AF80C4F00939447 /* Build configuration list for PBXNativeTarget "ShakyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF2C6DC42AF80C4F00939447 /* Debug */,
+				FF2C6DC52AF80C4F00939447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF2C6DC62AF80C4F00939447 /* Build configuration list for PBXNativeTarget "ShakyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF2C6DC72AF80C4F00939447 /* Debug */,
+				FF2C6DC82AF80C4F00939447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF2C6D942AF80C4E00939447 /* Project object */;
+}
