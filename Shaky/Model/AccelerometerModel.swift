@@ -13,7 +13,7 @@ class AccelerometerModel : ObservableObject {
     private let motion = CMMotionManager()
     private var timer : Timer?
     @Published var netAccP : Int = 0
-    @Published var diffNetAcc : Int = 0
+//    @Published var diffNetAcc : Int = 0
     
     func stopAccelerometers(){
         print("Stopping accelerometers")
@@ -38,10 +38,10 @@ class AccelerometerModel : ObservableObject {
                     
                     let netAcc2 = (x*x + y*y + z*z)
                     let netAccP = Int(netAcc2 * 300) - 300
-                    self.diffNetAcc = abs(self.netAccP - netAccP)
+//                    self.diffNetAcc = abs(self.netAccP - netAccP)
                     
                     self.netAccP = netAccP
-                    print(self.diffNetAcc)
+//                    print(self.diffNetAcc)
                 }
             })
             

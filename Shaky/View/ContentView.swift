@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var accModel = AccelerometerModel()
     @State var threshold = 0
     @State var displayGameLevel = false
     @State var showHelp = false
     
     var body: some View {
         if displayGameLevel{
-            GameLevelView(/*showLevel: $displayGameLevel,*/ acceleration: $accModel.netAccP)
+            GameLevelView(gameLevel: gameLevels.first!)
             
         } else{
             VStack(spacing:20) {
@@ -40,26 +39,9 @@ struct ContentView: View {
                 
                 Spacer()
                 
-//                Spacer()
-//                if($accModel.diffNetAcc.wrappedValue > $threshold.wrappedValue){
-//                    fullWidthTextWAction(name: String($accModel.diffNetAcc.wrappedValue))
-//                }
-//                
-//                Spacer()
-//                
-//                Stepper(value: $threshold, in: -5...20) {
-//                    Text("Threshold " + String($threshold.wrappedValue))
-//                }
-                
                 fullWidthTextWAction(name: "start") { displayGameLevel = true }
             }
             .padding()
-            .onAppear{
-                accModel.startAccelerometers()
-            }
-            .onDisappear{
-//                accModel.stopAccelerometers()
-            }
             .sheet(isPresented: $showHelp, content: {
                 HelpView(isDisplaying: $showHelp)
             })
