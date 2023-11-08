@@ -18,6 +18,10 @@
 		FF6819992AF8303D00BB3BCC /* GameLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6819982AF8303D00BB3BCC /* GameLevelView.swift */; };
 		FF68199B2AF8316300BB3BCC /* ViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68199A2AF8316300BB3BCC /* ViewComponents.swift */; };
 		FF8DDCE82AFBC6B800338146 /* GameLevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8DDCE72AFBC6B800338146 /* GameLevelModel.swift */; };
+		FF8DDCEE2AFBD66000338146 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FF8DDCED2AFBD66000338146 /* FirebaseAnalytics */; };
+		FF8DDCF02AFBD66000338146 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = FF8DDCEF2AFBD66000338146 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		FF8DDCF42AFBD89100338146 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF8DDCF32AFBD89100338146 /* GoogleService-Info.plist */; };
+		FF8DDCF72AFBDD7400338146 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = FF8DDCF62AFBDD7400338146 /* GoogleMobileAds */; };
 		FFA494422AFACC1C005F440F /* ShakeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA494412AFACC1C005F440F /* ShakeUtils.swift */; };
 		FFF8EC652AFAE5220018E860 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8EC642AFAE5220018E860 /* HelpView.swift */; };
 		FFF8EC692AFAE6FC0018E860 /* HorizontalZigZagAnimatedComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8EC682AFAE6FC0018E860 /* HorizontalZigZagAnimatedComponent.swift */; };
@@ -56,6 +60,7 @@
 		FF6819982AF8303D00BB3BCC /* GameLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelView.swift; sourceTree = "<group>"; };
 		FF68199A2AF8316300BB3BCC /* ViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComponents.swift; sourceTree = "<group>"; };
 		FF8DDCE72AFBC6B800338146 /* GameLevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelModel.swift; sourceTree = "<group>"; };
+		FF8DDCF32AFBD89100338146 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFA494412AFACC1C005F440F /* ShakeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeUtils.swift; sourceTree = "<group>"; };
 		FFF8EC642AFAE5220018E860 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		FFF8EC682AFAE6FC0018E860 /* HorizontalZigZagAnimatedComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalZigZagAnimatedComponent.swift; sourceTree = "<group>"; };
@@ -67,6 +72,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8DDCF72AFBDD7400338146 /* GoogleMobileAds in Frameworks */,
+				FF8DDCEE2AFBD66000338146 /* FirebaseAnalytics in Frameworks */,
+				FF8DDCF02AFBD66000338146 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +123,7 @@
 				FFF8EC662AFAE6D00018E860 /* View */,
 				FFF8EC6D2AFAF3090018E860 /* Utils */,
 				FF2C6DA32AF80C4F00939447 /* Assets.xcassets */,
+				FF8DDCF32AFBD89100338146 /* GoogleService-Info.plist */,
 				FF2C6DA52AF80C4F00939447 /* Preview Content */,
 			);
 			path = Shaky;
@@ -199,6 +208,11 @@
 			dependencies = (
 			);
 			name = Shaky;
+			packageProductDependencies = (
+				FF8DDCED2AFBD66000338146 /* FirebaseAnalytics */,
+				FF8DDCEF2AFBD66000338146 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				FF8DDCF62AFBDD7400338146 /* GoogleMobileAds */,
+			);
 			productName = Shaky;
 			productReference = FF2C6D9C2AF80C4E00939447 /* Shaky.app */;
 			productType = "com.apple.product-type.application";
@@ -271,6 +285,10 @@
 				Base,
 			);
 			mainGroup = FF2C6D932AF80C4E00939447;
+			packageReferences = (
+				FF8DDCEC2AFBD66000338146 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FF8DDCF52AFBDD7400338146 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = FF2C6D9D2AF80C4E00939447 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -289,6 +307,7 @@
 			files = (
 				FF2C6DA72AF80C4F00939447 /* Preview Assets.xcassets in Resources */,
 				FF2C6DA42AF80C4F00939447 /* Assets.xcassets in Resources */,
+				FF8DDCF42AFBD89100338146 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,12 +508,12 @@
 				DEVELOPMENT_TEAM = QJPF9VAGLS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = accelerometer;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -520,12 +539,12 @@
 				DEVELOPMENT_TEAM = QJPF9VAGLS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = accelerometer;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -656,6 +675,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FF8DDCEC2AFBD66000338146 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.17.0;
+			};
+		};
+		FF8DDCF52AFBDD7400338146 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.13.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FF8DDCED2AFBD66000338146 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF8DDCEC2AFBD66000338146 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		FF8DDCEF2AFBD66000338146 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF8DDCEC2AFBD66000338146 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		FF8DDCF62AFBDD7400338146 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF8DDCF52AFBDD7400338146 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FF2C6D942AF80C4E00939447 /* Project object */;
 }

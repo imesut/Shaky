@@ -18,6 +18,10 @@ struct ContentView: View {
             
         } else{
             VStack(spacing:20) {
+                Button("Crash") {
+                  fatalError("Crash was triggered")
+                }
+                
             HorizontalZigZagAnimatedComponent(child:
                     Image(systemName: "s.circle.fill").resizable().scaledToFit()
                         .frame(width: 120, height: 120)

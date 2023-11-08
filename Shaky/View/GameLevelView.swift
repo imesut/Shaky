@@ -122,8 +122,7 @@ struct GameLevelView: View {
 }
 
 #Preview {
-    let cv = ContentView()
-    return GameLevelView(gameLevel: gameLevels.first!)
+    GameLevelView(gameLevel: gameLevels.first!)
 }
 
 
