@@ -27,6 +27,7 @@ struct GameLevelView: View {
     @State private var ballPositionAnimationUnit = CGPoint(x: 1000, y: -100)
     @State private var barAnimationUnit : Double = 2
     @State private var ballRotateAnimationUnit : Double = 0
+    private let ballSize : CGFloat = 50.0
     
     init(gameLevel : GameLevel) {
         self.levelSteps = gameLevel.levelSteps
@@ -67,7 +68,7 @@ struct GameLevelView: View {
                             
                             // Ball
                             Image(systemName: "volleyball.fill").resizable().scaledToFit()
-                                .frame(width: 50, height: 50)
+                                .frame(width: ballSize, height: ballSize)
                                 .rotationEffect(.degrees(ballRotateAnimationUnit), anchor: .center)
                                 .position(ballPositionAnimationUnit)
                                 .animation(.linear, value: ballPositionAnimationUnit)
@@ -81,7 +82,7 @@ struct GameLevelView: View {
                         // Animated Bar
                         Group{
                             Spacer()
-                            RoundedRectangle(cornerSize: CGSize(width: barAnimationUnit, height: barAnimationUnit), style: .continuous)
+                            RoundedRectangle(cornerSize: CGSize(width: 50, height: 50), style: .continuous)
                                 .foregroundColor(Color.primary)
                                 .frame(height: barAnimationUnit)
                                 .padding(.horizontal, barAnimationUnit * 12)
@@ -96,11 +97,16 @@ struct GameLevelView: View {
                         Button {
                             jump()
                         } label: {
-                            HStack{
+                            HStack(spacing: 0){
+                                Spacer()
                                 Image(systemName: "tennis.racket").resizable().scaledToFit()
                                     .animation(.bouncy, value: tickCount)
-                                Text("JUMP")
+                                
+                                orangeUnderline(
+                                    body: Text("JUMP")
                                     .font(.system(size: geometry.size.height/10 - 10))
+                                )
+                                Spacer()
                             }
                             .foregroundColor(.primary)
                         }
@@ -139,8 +145,8 @@ extension GameLevelView {
     // Calculates Ball Position
     func pointerPosition(geometry : GeometryProxy) {
         let center = geometry.size.width / 2
-        let widthOfThePointer = geometry.size.height / CGFloat(totalMovementCount)
-        let xPosition = center - widthOfThePointer / 2 - CGFloat($accModel.netAccP.wrappedValue) * shakingRatio
+//        let widthOfThePointer = geometry.size.height / CGFloat(totalMovementCount)
+        let xPosition = center + CGFloat($accModel.netAccP.wrappedValue) * shakingRatio
         
         let rowHeight = geometry.size.height * 0.8 / CGFloat(totalMovementCount + 1)
         let yPosition = CGFloat(tickCount) * rowHeight
@@ -149,8 +155,10 @@ extension GameLevelView {
         self.ballPositionAnimationUnit = ballAnimationUnit
         
         // MARK: - Level Fail Logic
-        let currentStepsWidth = levelSteps[tickCount] * geometry.size.width
-        let displacement = abs(xPosition - center) * 2 + widthOfThePointer / 3
+        //TODO: why sometimes tickCount exceed?
+        let t = tickCount < totalMovementCount ? tickCount : totalMovementCount
+        let currentStepsWidth = levelSteps[t] * geometry.size.width
+        let displacement = abs(xPosition - center) * 2/* + ballSize / 3*/
         if displacement > currentStepsWidth {
             shouldGameFail = true
         }

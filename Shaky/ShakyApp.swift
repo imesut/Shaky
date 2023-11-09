@@ -15,6 +15,7 @@ struct ShakyApp: App {
     init() {
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        Music.shared.playMainMusic(action: .play)
       }
     
     var body: some Scene {

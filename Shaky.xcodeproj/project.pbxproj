@@ -17,12 +17,17 @@
 		FF2C6DCA2AF80CBD00939447 /* AccelerometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C6DC92AF80CBD00939447 /* AccelerometerModel.swift */; };
 		FF6819992AF8303D00BB3BCC /* GameLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6819982AF8303D00BB3BCC /* GameLevelView.swift */; };
 		FF68199B2AF8316300BB3BCC /* ViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68199A2AF8316300BB3BCC /* ViewComponents.swift */; };
+		FF88C2462AFD1CBE007EDB81 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF88C2452AFD1CBE007EDB81 /* Music.swift */; };
+		FF88C2482AFD238A007EDB81 /* mainMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF88C2472AFD2389007EDB81 /* mainMusic.mp3 */; };
+		FF88C24A2AFD2C94007EDB81 /* mainMusic2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF88C2492AFD2C94007EDB81 /* mainMusic2.mp3 */; };
+		FF88C24D2AFD3204007EDB81 /* levelNeutral.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF88C24B2AFD3203007EDB81 /* levelNeutral.mp3 */; };
+		FF88C24E2AFD3204007EDB81 /* levelSuccess.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF88C24C2AFD3204007EDB81 /* levelSuccess.mp3 */; };
 		FF8DDCE82AFBC6B800338146 /* GameLevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8DDCE72AFBC6B800338146 /* GameLevelModel.swift */; };
 		FF8DDCEE2AFBD66000338146 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FF8DDCED2AFBD66000338146 /* FirebaseAnalytics */; };
 		FF8DDCF02AFBD66000338146 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = FF8DDCEF2AFBD66000338146 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		FF8DDCF72AFBDD7400338146 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = FF8DDCF62AFBDD7400338146 /* GoogleMobileAds */; };
-		FFA494422AFACC1C005F440F /* ShakeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA494412AFACC1C005F440F /* ShakeUtils.swift */; };
-		FFC00A502AFBDF62003230CB /* StorageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC00A4F2AFBDF62003230CB /* StorageUtils.swift */; };
+		FFA494422AFACC1C005F440F /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA494412AFACC1C005F440F /* Shake.swift */; };
+		FFC00A502AFBDF62003230CB /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC00A4F2AFBDF62003230CB /* Storage.swift */; };
 		FFC00A522AFBE332003230CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFC00A512AFBE332003230CB /* GoogleService-Info.plist */; };
 		FFF8EC652AFAE5220018E860 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8EC642AFAE5220018E860 /* HelpView.swift */; };
 		FFF8EC692AFAE6FC0018E860 /* HorizontalZigZagAnimatedComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8EC682AFAE6FC0018E860 /* HorizontalZigZagAnimatedComponent.swift */; };
@@ -61,9 +66,14 @@
 		FF6819982AF8303D00BB3BCC /* GameLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelView.swift; sourceTree = "<group>"; };
 		FF68199A2AF8316300BB3BCC /* ViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComponents.swift; sourceTree = "<group>"; };
 		FF8285972AFCE2C200BB2271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FF88C2452AFD1CBE007EDB81 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		FF88C2472AFD2389007EDB81 /* mainMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainMusic.mp3; sourceTree = "<group>"; };
+		FF88C2492AFD2C94007EDB81 /* mainMusic2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainMusic2.mp3; sourceTree = "<group>"; };
+		FF88C24B2AFD3203007EDB81 /* levelNeutral.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = levelNeutral.mp3; sourceTree = "<group>"; };
+		FF88C24C2AFD3204007EDB81 /* levelSuccess.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = levelSuccess.mp3; sourceTree = "<group>"; };
 		FF8DDCE72AFBC6B800338146 /* GameLevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelModel.swift; sourceTree = "<group>"; };
-		FFA494412AFACC1C005F440F /* ShakeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeUtils.swift; sourceTree = "<group>"; };
-		FFC00A4F2AFBDF62003230CB /* StorageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageUtils.swift; sourceTree = "<group>"; };
+		FFA494412AFACC1C005F440F /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
+		FFC00A4F2AFBDF62003230CB /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		FFC00A512AFBE332003230CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFF8EC642AFAE5220018E860 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		FFF8EC682AFAE6FC0018E860 /* HorizontalZigZagAnimatedComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalZigZagAnimatedComponent.swift; sourceTree = "<group>"; };
@@ -127,6 +137,7 @@
 				FFF8EC662AFAE6D00018E860 /* View */,
 				FFF8EC6D2AFAF3090018E860 /* Utils */,
 				FF2C6DA32AF80C4F00939447 /* Assets.xcassets */,
+				FF88C24F2AFD3208007EDB81 /* Music */,
 				FFC00A512AFBE332003230CB /* GoogleService-Info.plist */,
 				FF2C6DA52AF80C4F00939447 /* Preview Content */,
 			);
@@ -156,6 +167,17 @@
 				FF2C6DBC2AF80C4F00939447 /* ShakyUITestsLaunchTests.swift */,
 			);
 			path = ShakyUITests;
+			sourceTree = "<group>";
+		};
+		FF88C24F2AFD3208007EDB81 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				FF88C2472AFD2389007EDB81 /* mainMusic.mp3 */,
+				FF88C2492AFD2C94007EDB81 /* mainMusic2.mp3 */,
+				FF88C24B2AFD3203007EDB81 /* levelNeutral.mp3 */,
+				FF88C24C2AFD3204007EDB81 /* levelSuccess.mp3 */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 		FFF8EC662AFAE6D00018E860 /* View */ = {
@@ -191,8 +213,9 @@
 		FFF8EC6D2AFAF3090018E860 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				FFA494412AFACC1C005F440F /* ShakeUtils.swift */,
-				FFC00A4F2AFBDF62003230CB /* StorageUtils.swift */,
+				FFA494412AFACC1C005F440F /* Shake.swift */,
+				FF88C2452AFD1CBE007EDB81 /* Music.swift */,
+				FFC00A4F2AFBDF62003230CB /* Storage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -310,9 +333,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF88C24A2AFD2C94007EDB81 /* mainMusic2.mp3 in Resources */,
+				FF88C24D2AFD3204007EDB81 /* levelNeutral.mp3 in Resources */,
 				FF2C6DA72AF80C4F00939447 /* Preview Assets.xcassets in Resources */,
+				FF88C2482AFD238A007EDB81 /* mainMusic.mp3 in Resources */,
 				FF2C6DA42AF80C4F00939447 /* Assets.xcassets in Resources */,
 				FFC00A522AFBE332003230CB /* GoogleService-Info.plist in Resources */,
+				FF88C24E2AFD3204007EDB81 /* levelSuccess.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +365,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF8DDCE82AFBC6B800338146 /* GameLevelModel.swift in Sources */,
-				FFA494422AFACC1C005F440F /* ShakeUtils.swift in Sources */,
+				FF88C2462AFD1CBE007EDB81 /* Music.swift in Sources */,
+				FFA494422AFACC1C005F440F /* Shake.swift in Sources */,
 				FF68199B2AF8316300BB3BCC /* ViewComponents.swift in Sources */,
 				FF2C6DCA2AF80CBD00939447 /* AccelerometerModel.swift in Sources */,
 				FFF8EC652AFAE5220018E860 /* HelpView.swift in Sources */,
@@ -346,7 +374,7 @@
 				FFF8EC6F2AFAFACD0018E860 /* LevelPassView.swift in Sources */,
 				FF2C6DA02AF80C4E00939447 /* ShakyApp.swift in Sources */,
 				FFF8EC692AFAE6FC0018E860 /* HorizontalZigZagAnimatedComponent.swift in Sources */,
-				FFC00A502AFBDF62003230CB /* StorageUtils.swift in Sources */,
+				FFC00A502AFBDF62003230CB /* Storage.swift in Sources */,
 				FF6819992AF8303D00BB3BCC /* GameLevelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

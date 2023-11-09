@@ -16,7 +16,7 @@ struct LevelPassView: View {
     var actionText : String { return completion == .success ? "Continue 👉" : "Try Again 🔄"}
     
     @State var showLevel = false
-    
+        
     var body: some View {
         
         if showLevel{
@@ -57,6 +57,13 @@ struct LevelPassView: View {
                 }
             }
             .padding(.all)
+            .onAppear{
+                Music.shared.playMainMusic(action: .pause)
+                Music.shared.playLevelTransitSound(completionType: completion)
+            }
+            .onDisappear(perform: {
+                Music.shared.playMainMusic(action: .resume)
+            })
         }
     }
 }
