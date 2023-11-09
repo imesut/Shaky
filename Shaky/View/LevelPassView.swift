@@ -39,12 +39,12 @@ struct LevelPassView: View {
                 if !paidUser {
                     Text("ADVERTISEMENT-HERE")
                     Spacer()
-                    fullWidthTextWAction(name: "Skip Advertisements"){
+                    fullWidthTextButton(name: "Skip Advertisements"){
                         print("skip ads")
                     }
                 } else {
                     
-                    fullWidthTextWAction(name: actionText){
+                    fullWidthTextButton(name: actionText){
                         print("continue")
                         triggerClickHaptic()
                         showLevel = true

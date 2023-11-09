@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         if displayGameLevel{
-            GameLevelView(gameLevel: gameLevels.first!)
+            GameLevelView(gameLevel: gameLevels[getUserProgress()])
             
         } else{
             VStack(spacing:20) {
@@ -43,7 +43,7 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                fullWidthTextWAction(name: "start") { displayGameLevel = true }
+                fullWidthTextButton(name: "start") { displayGameLevel = true }
             }
             .padding()
             .sheet(isPresented: $showHelp, content: {
