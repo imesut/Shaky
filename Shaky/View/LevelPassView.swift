@@ -51,7 +51,7 @@ struct LevelPassView: View {
                 Spacer()
                 
                 // Emoji
-                fullWidthText(name: selectedEmoji ?? "").padding()
+                fullWidthText(name: selectedEmoji ?? "").padding(.horizontal, 40)
                     .onAppear{
                         if completion == .success{ selectedEmoji = successEmojis.randomElement()! }
                         else{ selectedEmoji = failEmojis.randomElement()! }
@@ -101,16 +101,23 @@ struct LevelPassView: View {
                     ProgressView()
                 }
                 
+                Spacer()
+                
             }
             .padding(.all)
             .onAppear{
                 Music.shared.playMainMusic(action: .pause)
                 Music.shared.playLevelTransitSound(completionType: completion)
                 
-                // New Level Button loads with delay.
-                withAnimation(.bouncy(duration: 2).delay(2)) {
+                if !paidUser {
+                    // New Level Button loads with delay.
+                    withAnimation(.bouncy(duration: 2).delay(2)) {
+                        showActionButton = true
+                    }
+                } else {
                     showActionButton = true
                 }
+                
                 saveUserProgress(level: playedLevel)
             }
         }
