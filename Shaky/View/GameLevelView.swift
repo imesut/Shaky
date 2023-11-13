@@ -10,6 +10,7 @@ import SwiftUI
 struct GameLevelView: View {
     
     private let levelNumber : Int
+    private let nextLevelNumber : Int
     @State private var shouldGameFail = false
     
     // Model
@@ -36,20 +37,20 @@ struct GameLevelView: View {
         self.wayDown = gameLevel.wayDown
         self.shakingRatio = gameLevel.shakingRatio
         self.levelNumber = gameLevel.level
-        //        print("Game level", self.levelNumber)
+        self.nextLevelNumber = gameLevel.level + 1
     }
     
     var body: some View {
         
         // Level Pass - Fail View
         if shouldGameFail == true {
-            LevelPassView(completion: .fail, completedLevel: levelNumber - 1)
+            LevelPassView(completion: .fail, playedLevel: levelNumber)
             
         } else{
             
             // Level Pass - Sucess View
-            if tickCount == totalMovementCount + 1 {
-                LevelPassView(completion: .success, completedLevel: levelNumber)
+            if tickCount > totalMovementCount {
+                LevelPassView(completion: .success, playedLevel: levelNumber)
             } else{
                 //MARK: Main Level View
                 GeometryReader(content: { geometry in
@@ -176,7 +177,7 @@ struct GameLevelView: View {
 }
 
 #Preview {
-    GameLevelView(gameLevel: gameLevels.first!)
+    GameLevelView(gameLevel: getLevelData(level: 1))
 }
 
 
@@ -195,8 +196,8 @@ extension GameLevelView {
     
     // Calculates Ball Position
     func pointerPosition(geometry : GeometryProxy) {
-        print("TICK Count", tickCount)
-        print("G2Height", G2Height)
+//        print("TICK Count", tickCount)
+//        print("G2Height", G2Height)
         let center = geometry.size.width / 2
         let rowHeight = G2Height / CGFloat(totalMovementCount)
         

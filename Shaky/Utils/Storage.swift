@@ -14,6 +14,6 @@ func saveUserProgress(level : Int){
     defaults.set(level, forKey: levelKey)
 }
 
-func getUserProgress() -> Int {
+func getUsersLastCompletedLevel() -> Int {
     return defaults.integer(forKey: levelKey)
 }

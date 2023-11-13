@@ -10,39 +10,34 @@ import GoogleMobileAds
 import StoreKit
 
 struct LevelPassView: View {
-    @State private var interstitial: GADInterstitialAd?
-    let completion : completionType
-    let completedLevel : Int
-    @State var paidUser : Bool = PaidUserModel.shared.userIsPremium
-    @State var showAd : Bool = false
-    
-    // Message Parameters
+    // InContexts / Privates / Message Parameters
     private var title : String { return completion == .success ? "High Five" : "Oops..."}
     private var subText : String { return completion == .success ? "What a success!" : "Wanna try again?"}
     private var actionText : String { return completion == .success ? "Continue 👉" : "Try Again 🔄"}
     private let successEmojis = ["👏", "🚀", "😎", "🤘", "🪨", "👏"]
     private let failEmojis = ["🥺", "🤦🏻‍♂️", "🙊", "🙈", "🙄", "🤯", "🫤"]
-    @State private var selectedEmoji : String?
-
+    // Initializations
+    let completion : completionType
+    let playedLevel : Int
+    var theLevelToContinue : Int {
+        return completion == .success ? playedLevel + 1 : playedLevel
+    }
     var productLoaded : Product? { return PaidUserModel.shared.productsAvailable.first }
 
-    
-    @State var showLevel = false
-    
+    // States
+    @State var continueToTheGame = false
+    @State private var selectedEmoji : String?
+    @State var paidUser : Bool = PaidUserModel.shared.userIsPremium
+    @State var showAd : Bool = false
+    @State private var interstitial: GADInterstitialAd?
     // Animation States
     @State var showActionButton = false
     @State var scaleOfSkipAdButton = 1.00
         
     var body: some View {
         
-        if showLevel{
-            
-            if completedLevel == gameLevels.count {
-                GameLevelView(gameLevel: gameLevels[completedLevel-1])
-            } else{
-                GameLevelView(gameLevel: gameLevels[completedLevel])
-
-            }
+        if continueToTheGame{
+            GameLevelView(gameLevel: getLevelData(level: theLevelToContinue))
             
         } else{
             
@@ -92,13 +87,13 @@ struct LevelPassView: View {
                 if showActionButton{
                     fullWidthTextButton(name: actionText){
                         Music.shared.playMainMusic(action: .resume)
-                        print("continue")
+//                        print("continue")
                         triggerClickHaptic()
-                        showLevel = true
+                        continueToTheGame = true
                     }
                     
-                    if completion == .success{
-                        Text("To Level \(completedLevel + 1)")
+                    if playedLevel != theLevelToContinue {
+                        Text("To Level \(theLevelToContinue)")
                             .font(.system(size: 20))
                     }
                     
@@ -116,6 +111,7 @@ struct LevelPassView: View {
                 withAnimation(.bouncy(duration: 2).delay(2)) {
                     showActionButton = true
                 }
+                saveUserProgress(level: playedLevel)
             }
         }
     }
@@ -124,8 +120,7 @@ struct LevelPassView: View {
 
 #Preview {
     
-    LevelPassView(completion: .success,
-                  completedLevel: 1)
+    LevelPassView(completion: .success, playedLevel: 1)
 }
 
 

@@ -34,7 +34,6 @@
 		FFA494422AFACC1C005F440F /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA494412AFACC1C005F440F /* Shake.swift */; };
 		FFC00A502AFBDF62003230CB /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC00A4F2AFBDF62003230CB /* Storage.swift */; };
 		FFC00A522AFBE332003230CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFC00A512AFBE332003230CB /* GoogleService-Info.plist */; };
-		FFD75DAF2B0271FB000036CE /* ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD75DAE2B0271FB000036CE /* ball.swift */; };
 		FFD75DB12B02B497000036CE /* ball.wav in Resources */ = {isa = PBXBuildFile; fileRef = FFD75DB02B02B496000036CE /* ball.wav */; };
 		FFF8EC652AFAE5220018E860 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8EC642AFAE5220018E860 /* HelpView.swift */; };
 		FFF8EC692AFAE6FC0018E860 /* HorizontalZigZagAnimatedComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8EC682AFAE6FC0018E860 /* HorizontalZigZagAnimatedComponent.swift */; };
@@ -87,7 +86,6 @@
 		FFA494412AFACC1C005F440F /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		FFC00A4F2AFBDF62003230CB /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		FFC00A512AFBE332003230CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FFD75DAE2B0271FB000036CE /* ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ball.swift; sourceTree = "<group>"; };
 		FFD75DB02B02B496000036CE /* ball.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ball.wav; sourceTree = "<group>"; };
 		FFF8EC642AFAE5220018E860 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		FFF8EC682AFAE6FC0018E860 /* HorizontalZigZagAnimatedComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalZigZagAnimatedComponent.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 		FF2C6D932AF80C4E00939447 = {
 			isa = PBXGroup;
 			children = (
-				FFD75DAE2B0271FB000036CE /* ball.swift */,
 				FF2C6D9E2AF80C4E00939447 /* Shaky */,
 				FF2C6DAF2AF80C4F00939447 /* ShakyTests */,
 				FF2C6DB92AF80C4F00939447 /* ShakyUITests */,
@@ -400,7 +397,6 @@
 				FF68199B2AF8316300BB3BCC /* ViewComponents.swift in Sources */,
 				FF2C6DCA2AF80CBD00939447 /* AccelerometerModel.swift in Sources */,
 				FFF8EC652AFAE5220018E860 /* HelpView.swift in Sources */,
-				FFD75DAF2B0271FB000036CE /* ball.swift in Sources */,
 				FF2C6DA22AF80C4E00939447 /* ContentView.swift in Sources */,
 				FF3AA3AF2AFE50620059F14D /* InterstitialAd.swift in Sources */,
 				FFF8EC6F2AFAFACD0018E860 /* LevelPassView.swift in Sources */,

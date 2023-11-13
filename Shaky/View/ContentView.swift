@@ -11,10 +11,14 @@ struct ContentView: View {
     @State var threshold = 0
     @State var displayGameLevel = false
     @State var showHelp = false
+    private var levelNoToDisplay : Int {
+        let lastLevel = getUsersLastCompletedLevel()
+        return lastLevel + 1
+    }
     
     var body: some View {
         if displayGameLevel{
-            GameLevelView(gameLevel: gameLevels[getUserProgress()])
+            GameLevelView(gameLevel: getLevelData(level: levelNoToDisplay))
             
         } else{
             VStack(spacing:20) {
@@ -46,6 +50,7 @@ struct ContentView: View {
                 Spacer()
                 
                 fullWidthTextButton(name: "start") { displayGameLevel = true }
+                Text("to Level \(levelNoToDisplay)").padding(.top, -10)
             }
             .padding()
             .sheet(isPresented: $showHelp, content: {
