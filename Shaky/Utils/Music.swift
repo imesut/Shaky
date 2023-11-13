@@ -17,6 +17,7 @@ class Music : Observable {
         ofType: "mp3")!))
     private let levelSuccessMusic = URL(fileURLWithPath:Bundle.main.path(forResource: "levelSuccess", ofType: "mp3")!)
     private let levelNeutralMusic = URL(fileURLWithPath:Bundle.main.path(forResource: "levelNeutral", ofType: "mp3")!)
+    private let ballSound = URL(fileURLWithPath:Bundle.main.path(forResource: "ball", ofType: "wav")!)
     
     // Important to have a sound, class should have an initial Player.
     // https://www.globalnerdy.com/2015/07/06/how-to-fix-the-common-no-sound-from-avplayer-avaudioplayer-problem-in-ios-swift-programming/
@@ -49,6 +50,15 @@ class Music : Observable {
         }
     }
     
+    func playBallSound(){
+        do {
+            player = try AVAudioPlayer(contentsOf: ballSound)
+            player.volume = 0.50
+            player.play()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
 }
 
 

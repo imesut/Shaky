@@ -35,6 +35,7 @@
 		FFC00A502AFBDF62003230CB /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC00A4F2AFBDF62003230CB /* Storage.swift */; };
 		FFC00A522AFBE332003230CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFC00A512AFBE332003230CB /* GoogleService-Info.plist */; };
 		FFD75DAF2B0271FB000036CE /* ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD75DAE2B0271FB000036CE /* ball.swift */; };
+		FFD75DB12B02B497000036CE /* ball.wav in Resources */ = {isa = PBXBuildFile; fileRef = FFD75DB02B02B496000036CE /* ball.wav */; };
 		FFF8EC652AFAE5220018E860 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8EC642AFAE5220018E860 /* HelpView.swift */; };
 		FFF8EC692AFAE6FC0018E860 /* HorizontalZigZagAnimatedComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8EC682AFAE6FC0018E860 /* HorizontalZigZagAnimatedComponent.swift */; };
 		FFF8EC6F2AFAFACD0018E860 /* LevelPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8EC6E2AFAFACD0018E860 /* LevelPassView.swift */; };
@@ -87,6 +88,7 @@
 		FFC00A4F2AFBDF62003230CB /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		FFC00A512AFBE332003230CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFD75DAE2B0271FB000036CE /* ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ball.swift; sourceTree = "<group>"; };
+		FFD75DB02B02B496000036CE /* ball.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ball.wav; sourceTree = "<group>"; };
 		FFF8EC642AFAE5220018E860 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		FFF8EC682AFAE6FC0018E860 /* HorizontalZigZagAnimatedComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalZigZagAnimatedComponent.swift; sourceTree = "<group>"; };
 		FFF8EC6E2AFAFACD0018E860 /* LevelPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPassView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		FF88C24F2AFD3208007EDB81 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				FFD75DB02B02B496000036CE /* ball.wav */,
 				FF88C2472AFD2389007EDB81 /* mainMusic.mp3 */,
 				FF88C2492AFD2C94007EDB81 /* mainMusic2.mp3 */,
 				FF88C24B2AFD3203007EDB81 /* levelNeutral.mp3 */,
@@ -366,6 +369,7 @@
 				FF2C6DA42AF80C4F00939447 /* Assets.xcassets in Resources */,
 				FFC00A522AFBE332003230CB /* GoogleService-Info.plist in Resources */,
 				FF88C24E2AFD3204007EDB81 /* levelSuccess.mp3 in Resources */,
+				FFD75DB12B02B497000036CE /* ball.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

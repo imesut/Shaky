@@ -27,6 +27,7 @@ struct GameLevelView: View {
     @State private var ballPositionAnimationUnit = CGPoint(x: 1000, y: -100)
     @State private var barAnimationUnit : Double = 2
     @State private var ballRotateAnimationUnit : Double = 0
+    @State private var keepHorizontalRotateAnimationUnit : Double = 20
     @State var G2Height : CGFloat = 0
     private let ballSize : CGFloat = 50.0
     
@@ -52,82 +53,109 @@ struct GameLevelView: View {
             } else{
                 //MARK: Main Level View
                 GeometryReader(content: { geometry in
-                    VStack(spacing: 0){
-                        
-                        //MARK: - Header Area
-                        HStack{
-                            Text("LEVEL: \(levelNumber)")
-                                .font(.caption)
-                            Spacer()
-                            Text("Jump: \(tickCount) / " + String(totalMovementCount))
-                                .font(.caption)
-                        }
-                        .padding()
-                        .accessibilityHidden(true)
-                        
-                        //MARK: - Ball and Walls
-                        GeometryReader(content: { g2 in
-                            ZStack{
-                                Color.primary
-                                
-                                rowBgView(geometry: geometry)
-                                    .ignoresSafeArea()
-                                
-                                // Ball
-                                Image(systemName: "volleyball.fill").resizable().scaledToFit()
-                                    .frame(width: ballSize, height: ballSize)
-                                    .rotationEffect(.degrees(ballRotateAnimationUnit), anchor: .center)
-                                    .position(ballPositionAnimationUnit)
-                                    .animation(.linear, value: ballPositionAnimationUnit)
-                                    .onAppear{
-                                        withAnimation(.linear.speed(0.15 * shakingRatio)
-                                            .repeatForever(autoreverses: false)){
-                                            ballRotateAnimationUnit = 360
-                                        }
-                                    }
-                                    .accessibilityHidden(true)
-                            }
-                            .onAppear{
-                                G2Height = g2.size.height
-                            }
-                        })
-                        
-                        
-                        //MARK: - Bottom
-                        Group{
-                            // Animated Bar
-                            Group{
+                    ZStack{
+                        VStack(spacing: 0){
+                            //MARK: - Header Area
+                            HStack{
+                                Text("LEVEL: \(levelNumber)")
+                                    .font(.caption)
                                 Spacer()
-                                RoundedRectangle(cornerSize: CGSize(width: 50, height: 50), style: .continuous)
-                                    .foregroundColor(Color.primary)
-                                    .frame(height: barAnimationUnit)
-                                    .padding(.horizontal, barAnimationUnit * 12)
-                                    .onAppear{
-                                        withAnimation(.easeInOut.speed(0.25).repeatForever()){
-                                            barAnimationUnit = 6
-                                        }
-                                    }
-                            }.frame(height: 12)
-                            
-                            
-                            Button {
-                                jump()
-                            } label: {
-                                HStack(spacing: 0){
-                                    Spacer()
-                                    Image(systemName: "tennis.racket").resizable().scaledToFit()
-                                        .animation(.bouncy, value: tickCount)
-                                    
-                                    orangeUnderline(body: Text("JUMP")
-                                        .font(.system(size: geometry.size.height/10 - 10))
-                                    )
-                                    Spacer()
-                                }
-                                .foregroundColor(.primary)
+                                Text("Jump: \(tickCount) / " + String(totalMovementCount))
+                                    .font(.caption)
                             }
-                            .frame(height: geometry.size.height/10 - 10)
-                            .accessibilityHint("Jump: \(tickCount) / " + String(totalMovementCount))
+                            .padding()
+                            .accessibilityHidden(true)
+                            
+                            //MARK: - Ball and Walls
+                            GeometryReader(content: { g2 in
+                                ZStack{
+                                    Color.primary
+                                    
+                                    rowBgView(geometry: geometry)
+                                        .ignoresSafeArea()
+                                    
+                                    // Ball
+                                    Image(systemName: "volleyball.fill").resizable().scaledToFit()
+                                        .frame(width: ballSize, height: ballSize)
+                                        .rotationEffect(.degrees(ballRotateAnimationUnit), anchor: .center)
+                                        .position(ballPositionAnimationUnit)
+                                        .animation(.linear, value: ballPositionAnimationUnit)
+                                        .onAppear{
+                                            withAnimation(.linear.speed(0.15 * shakingRatio)
+                                                .repeatForever(autoreverses: false)){
+                                                    ballRotateAnimationUnit = 360
+                                                }
+                                        }
+                                        .accessibilityHidden(true)
+                                }
+                                .onAppear{
+                                    G2Height = g2.size.height
+                                }
+                            })
+                            
+                            
+                            //MARK: - Bottom
+                            Group{
+                                // Animated Bar
+                                Group{
+                                    Spacer()
+                                    RoundedRectangle(cornerSize: CGSize(width: 50, height: 50), style: .continuous)
+                                        .foregroundColor(Color.primary)
+                                        .frame(height: barAnimationUnit)
+                                        .padding(.horizontal, barAnimationUnit * 12)
+                                        .onAppear{
+                                            withAnimation(.easeInOut.speed(0.25).repeatForever()){
+                                                barAnimationUnit = 6
+                                            }
+                                        }
+                                }.frame(height: 12)
+                                
+                                
+                                Button {
+                                    jump()
+                                } label: {
+                                    HStack(spacing: 0){
+                                        Spacer()
+                                        Image(systemName: "tennis.racket").resizable().scaledToFit()
+                                            .animation(.bouncy, value: tickCount)
+                                        
+                                        orangeUnderline(body: Text("JUMP")
+                                            .font(.system(size: geometry.size.height/10 - 10))
+                                        )
+                                        Spacer()
+                                    }
+                                    .foregroundColor(.primary)
+                                }
+                                .frame(height: geometry.size.height/10 - 10)
+                                .accessibilityHint("Jump: \(tickCount) / " + String(totalMovementCount))
+                            }
                         }
+                        
+                        //MARK: Keep Phone Horizontal
+                        if !$accModel.phoneOnYAxis.wrappedValue {
+                            VStack(spacing: 0){
+//                                Spacer()
+                                Image(systemName: "iphone").resizable().scaledToFit().padding(60)
+                                    .foregroundColor(Color.primary)
+                                    .rotation3DEffect(.degrees(keepHorizontalRotateAnimationUnit),
+                                                      axis: (x: 1, y: 0, z: 0.0))
+                                
+                                Text("Keep Your iPhone\nVertical to Play.").font(.title)
+                                    .multilineTextAlignment(.center)
+                                    .padding()
+                                
+//                                Spacer()
+                                
+                            }
+                            .background(Color.primary.colorInvert().opacity(0.75).blur(radius: 20))
+                            .onAppear{
+                                withAnimation(.easeInOut(duration: 1.5)
+                                    .repeatForever(autoreverses: false)){
+                                        keepHorizontalRotateAnimationUnit = 0
+                                    }
+                            }
+                        }
+                        
                     }
                     .onChange(of: tickCount) { _ in
                         pointerPosition(geometry: geometry)
@@ -157,7 +185,10 @@ struct GameLevelView: View {
 extension GameLevelView {
     
     func jump(){
-        tickCount += wayDown ? 1 : -1
+        if accModel.phoneOnYAxis{
+            tickCount += 1 /*wayDown ? 1 : -1*/
+        }
+        Music.shared.playBallSound()
         triggerJumpHaptic()
     }
     
