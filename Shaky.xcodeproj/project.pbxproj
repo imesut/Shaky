@@ -22,6 +22,8 @@
 		FF88C24A2AFD2C94007EDB81 /* mainMusic2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF88C2492AFD2C94007EDB81 /* mainMusic2.mp3 */; };
 		FF88C24D2AFD3204007EDB81 /* levelNeutral.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF88C24B2AFD3203007EDB81 /* levelNeutral.mp3 */; };
 		FF88C24E2AFD3204007EDB81 /* levelSuccess.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF88C24C2AFD3204007EDB81 /* levelSuccess.mp3 */; };
+		FF88C2512AFD4EA7007EDB81 /* PaidUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF88C2502AFD4EA7007EDB81 /* PaidUserModel.swift */; };
+		FF88C2532AFD6758007EDB81 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF88C2522AFD6758007EDB81 /* Analytics.swift */; };
 		FF8DDCE82AFBC6B800338146 /* GameLevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8DDCE72AFBC6B800338146 /* GameLevelModel.swift */; };
 		FF8DDCEE2AFBD66000338146 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FF8DDCED2AFBD66000338146 /* FirebaseAnalytics */; };
 		FF8DDCF02AFBD66000338146 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = FF8DDCEF2AFBD66000338146 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -71,6 +73,8 @@
 		FF88C2492AFD2C94007EDB81 /* mainMusic2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainMusic2.mp3; sourceTree = "<group>"; };
 		FF88C24B2AFD3203007EDB81 /* levelNeutral.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = levelNeutral.mp3; sourceTree = "<group>"; };
 		FF88C24C2AFD3204007EDB81 /* levelSuccess.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = levelSuccess.mp3; sourceTree = "<group>"; };
+		FF88C2502AFD4EA7007EDB81 /* PaidUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidUserModel.swift; sourceTree = "<group>"; };
+		FF88C2522AFD6758007EDB81 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		FF8DDCE72AFBC6B800338146 /* GameLevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelModel.swift; sourceTree = "<group>"; };
 		FFA494412AFACC1C005F440F /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		FFC00A4F2AFBDF62003230CB /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				FF2C6DC92AF80CBD00939447 /* AccelerometerModel.swift */,
+				FF88C2502AFD4EA7007EDB81 /* PaidUserModel.swift */,
 				FF8DDCE72AFBC6B800338146 /* GameLevelModel.swift */,
 			);
 			path = Model;
@@ -215,6 +220,7 @@
 			children = (
 				FFA494412AFACC1C005F440F /* Shake.swift */,
 				FF88C2452AFD1CBE007EDB81 /* Music.swift */,
+				FF88C2522AFD6758007EDB81 /* Analytics.swift */,
 				FFC00A4F2AFBDF62003230CB /* Storage.swift */,
 			);
 			path = Utils;
@@ -372,10 +378,12 @@
 				FFF8EC652AFAE5220018E860 /* HelpView.swift in Sources */,
 				FF2C6DA22AF80C4E00939447 /* ContentView.swift in Sources */,
 				FFF8EC6F2AFAFACD0018E860 /* LevelPassView.swift in Sources */,
+				FF88C2532AFD6758007EDB81 /* Analytics.swift in Sources */,
 				FF2C6DA02AF80C4E00939447 /* ShakyApp.swift in Sources */,
 				FFF8EC692AFAE6FC0018E860 /* HorizontalZigZagAnimatedComponent.swift in Sources */,
 				FFC00A502AFBDF62003230CB /* Storage.swift in Sources */,
 				FF6819992AF8303D00BB3BCC /* GameLevelView.swift in Sources */,
+				FF88C2512AFD4EA7007EDB81 /* PaidUserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
