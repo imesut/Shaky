@@ -27,6 +27,7 @@ struct GameLevelView: View {
     @State private var ballPositionAnimationUnit = CGPoint(x: 1000, y: -100)
     @State private var barAnimationUnit : Double = 2
     @State private var ballRotateAnimationUnit : Double = 0
+    @State var G2Height : CGFloat = 0
     private let ballSize : CGFloat = 50.0
     
     init(gameLevel : GameLevel) {
@@ -34,6 +35,7 @@ struct GameLevelView: View {
         self.wayDown = gameLevel.wayDown
         self.shakingRatio = gameLevel.shakingRatio
         self.levelNumber = gameLevel.level
+//        print("Game level", self.levelNumber)
     }
     
     var body: some View {
@@ -45,77 +47,93 @@ struct GameLevelView: View {
         } else{
             
             // Level Pass - Sucess View
-            if tickCount == totalMovementCount {
+            if tickCount == totalMovementCount + 1 {
                 LevelPassView(completion: .success, completedLevel: levelNumber)
             } else{
-                
                 //MARK: Main Level View
-                
                 GeometryReader(content: { geometry in
-                    VStack{
-                        // Header Area
-                        VStack{
-                            Text("LEVEL: \(levelNumber)\nJump: \(tickCount) / " + String(totalMovementCount))
-                                .font(.caption).multilineTextAlignment(.center)
+                    VStack(spacing: 0){
+                        
+                        //MARK: - Header Area
+                        HStack{
+                            Text("LEVEL: \(levelNumber)")
+                                .font(.caption)
                             Spacer()
-                        }.frame(height: geometry.size.height/10)
+                            Text("Jump: \(tickCount) / " + String(totalMovementCount))
+                                .font(.caption)
+                        }.padding()
                         
-                        // Ball and Walls
-                        ZStack{
-                            Color.primary
-                            
-                            rowBgView(geometry: geometry)
-                            
-                            // Ball
-                            Image(systemName: "volleyball.fill").resizable().scaledToFit()
-                                .frame(width: ballSize, height: ballSize)
-                                .rotationEffect(.degrees(ballRotateAnimationUnit), anchor: .center)
-                                .position(ballPositionAnimationUnit)
-                                .animation(.linear, value: ballPositionAnimationUnit)
-                                .onAppear{
-                                    withAnimation(.linear.speed(0.04).repeatForever(autoreverses: false)){
-                                        ballRotateAnimationUnit = 360
-                                    }
-                                }
-                        }
-                        
-                        // Animated Bar
-                        Group{
-                            Spacer()
-                            RoundedRectangle(cornerSize: CGSize(width: 50, height: 50), style: .continuous)
-                                .foregroundColor(Color.primary)
-                                .frame(height: barAnimationUnit)
-                                .padding(.horizontal, barAnimationUnit * 12)
-                                .onAppear{
-                                    withAnimation(.easeInOut.speed(0.25).repeatForever()){
-                                        barAnimationUnit = 6
-                                    }
-                                }
-                        }.frame(height: 12)
-                        
-                        
-                        Button {
-                            jump()
-                        } label: {
-                            HStack(spacing: 0){
-                                Spacer()
-                                Image(systemName: "tennis.racket").resizable().scaledToFit()
-                                    .animation(.bouncy, value: tickCount)
+                        //MARK: - Ball and Walls
+                        GeometryReader(content: { g2 in
+                            ZStack{
+                                Color.primary
                                 
-                                orangeUnderline(
-                                    body: Text("JUMP")
-                                    .font(.system(size: geometry.size.height/10 - 10))
-                                )
-                                Spacer()
+                                rowBgView(geometry: geometry)
+                                    .ignoresSafeArea()
+                                
+                                // Ball
+                                Image(systemName: "volleyball.fill").resizable().scaledToFit()
+                                    .frame(width: ballSize, height: ballSize)
+                                    .rotationEffect(.degrees(ballRotateAnimationUnit), anchor: .center)
+                                    .position(ballPositionAnimationUnit)
+                                    .animation(.linear, value: ballPositionAnimationUnit)
+                                    .onAppear{
+                                        withAnimation(.linear.speed(0.15 * shakingRatio).repeatForever(autoreverses: false)){
+                                            ballRotateAnimationUnit = 360
+                                        }
+                                    }
                             }
-                            .foregroundColor(.primary)
+                            .onAppear{
+                                G2Height = g2.size.height
+                            }
+                        })
+                        
+                        
+                        //MARK: - Bottom
+                        Group{
+                            // Animated Bar
+                            Group{
+                                Spacer()
+                                RoundedRectangle(cornerSize: CGSize(width: 50, height: 50), style: .continuous)
+                                    .foregroundColor(Color.primary)
+                                    .frame(height: barAnimationUnit)
+                                    .padding(.horizontal, barAnimationUnit * 12)
+                                    .onAppear{
+                                        withAnimation(.easeInOut.speed(0.25).repeatForever()){
+                                            barAnimationUnit = 6
+                                        }
+                                    }
+                            }.frame(height: 12)
+                            
+                            
+                            Button {
+                                jump()
+                            } label: {
+                                HStack(spacing: 0){
+                                    Spacer()
+                                    Image(systemName: "tennis.racket").resizable().scaledToFit()
+                                        .animation(.bouncy, value: tickCount)
+                                    
+                                    orangeUnderline(
+                                        body: Text("JUMP")
+                                            .font(.system(size: geometry.size.height/10 - 10))
+                                    )
+                                    Spacer()
+                                }
+                                .foregroundColor(.primary)
+                            }
+                            .frame(height: geometry.size.height/10 - 10)
                         }
-                        .frame(height: geometry.size.height/10 - 10)
                     }
-                    .onChange(of: $accModel.netAccP.wrappedValue | tickCount) { _ in
+                    .onChange(of: tickCount) { _ in
+                        pointerPosition(geometry: geometry)
+                    }
+                    .onChange(of: $accModel.netAccP.wrappedValue) { _ in
                         pointerPosition(geometry: geometry)
                     }
                 })
+                
+                
                 .onAppear{
                     accModel.startAccelerometers()
                 }
@@ -137,28 +155,29 @@ struct GameLevelView: View {
 extension GameLevelView {
     
     func jump(){
-        tickCount = wayDown ? tickCount + 1 : tickCount - 1
+        tickCount += wayDown ? 1 : -1
         triggerJumpHaptic()
     }
     
     
     // Calculates Ball Position
     func pointerPosition(geometry : GeometryProxy) {
+        print("TICK Count", tickCount)
+        print("G2Height", G2Height)
         let center = geometry.size.width / 2
-//        let widthOfThePointer = geometry.size.height / CGFloat(totalMovementCount)
+        let rowHeight = G2Height / CGFloat(totalMovementCount)
+        
         let xPosition = center + CGFloat($accModel.netAccP.wrappedValue) * shakingRatio
-        
-        let rowHeight = geometry.size.height * 0.8 / CGFloat(totalMovementCount + 1)
-        let yPosition = CGFloat(tickCount) * rowHeight
-        
+        let yPosition = tickCount != 0 ? (CGFloat((tickCount * 2) - 1) * rowHeight / 2  ) : 0
         let ballAnimationUnit = CGPoint(x: xPosition, y: yPosition)
         self.ballPositionAnimationUnit = ballAnimationUnit
         
         // MARK: - Level Fail Logic
         //TODO: why sometimes tickCount exceed?
-        let t = tickCount < totalMovementCount ? tickCount : totalMovementCount
+        let t = tickCount < totalMovementCount ? tickCount : (totalMovementCount - 1)
+        print("T:", t)
         let currentStepsWidth = levelSteps[t] * geometry.size.width
-        let displacement = abs(xPosition - center) * 2/* + ballSize / 3*/
+        let displacement = abs(xPosition - center) * 2 /* + ballSize / 3*/
         if displacement > currentStepsWidth {
             shouldGameFail = true
         }

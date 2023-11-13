@@ -7,17 +7,31 @@
 
 import SwiftUI
 import GoogleMobileAds
+import StoreKit
 
 struct LevelPassView: View {
     @State private var interstitial: GADInterstitialAd?
     let completion : completionType
     let completedLevel : Int
     @State var paidUser : Bool = PaidUserModel.shared.userIsPremium
-    var title : String { return completion == .success ? "High Five 👏" : "Oops... 🫤"}
-    var subText : String { return completion == .success ? "What a success!" : "Wanna try again?"}
-    var actionText : String { return completion == .success ? "Continue 👉" : "Try Again 🔄"}
+    @State var showAd : Bool = false
+    
+    // Message Parameters
+    private var title : String { return completion == .success ? "High Five" : "Oops..."}
+    private var subText : String { return completion == .success ? "What a success!" : "Wanna try again?"}
+    private var actionText : String { return completion == .success ? "Continue 👉" : "Try Again 🔄"}
+    private let successEmojis = ["👏", "🚀", "😎", "🤘", "🪨", "👏"]
+    private let failEmojis = ["🥺", "🤦🏻‍♂️", "🙊", "🙈", "🙄", "🤯", "🫤"]
+    @State private var selectedEmoji : String?
+
+    var productLoaded : Product? { return PaidUserModel.shared.productsAvailable.first }
+
     
     @State var showLevel = false
+    
+    // Animation States
+    @State var showActionButton = false
+    @State var scaleOfSkipAdButton = 1.00
         
     var body: some View {
         
@@ -33,50 +47,63 @@ struct LevelPassView: View {
         } else{
             
             VStack{
-                fullWidthText(name: title)
-                fullWidthText(name: subText)
+                //MARK: - Title
+                Group{
+                    fullWidthText(name: title)
+                    fullWidthText(name: subText)
+                }
                 
                 Spacer()
                 
-                //MARK: ADVERTISEMENTS
+                // Emoji
+                fullWidthText(name: selectedEmoji ?? "").padding()
+                    .onAppear{
+                        if completion == .success{ selectedEmoji = successEmojis.randomElement()! }
+                        else{ selectedEmoji = failEmojis.randomElement()! }
+                    }
+                
+                Spacer()
+                
+                //MARK: -  ADVERTISEMENTS
+                //TODO: Check Advertisement Logic in detail to be sure. After submitting to the App Store.
                 Group{
-                    if !paidUser {
-                        Text("ADVERTISEMENT-HERE")
-                        
-                        Spacer()
+                    if !paidUser && productLoaded != nil {
                         fullWidthTextButton(name: "Skip Advertisements"){
                             print("skip ads clicked")
                             Task {
-                                let p = PaidUserModel.shared.productsAvailable.first
-                                if let product = p {
-                                    _ = try await PaidUserModel.shared.purchase(product: product)
+                                if productLoaded != nil {
+                                    _ = try await PaidUserModel.shared.purchase(product: productLoaded!)
                                 }
                             }
-                        }
-                    } else {
-                        fullWidthTextButton(name: actionText){
-                            print("continue")
-                            triggerClickHaptic()
-                            showLevel = true
-                        }
-                        
-                        if completion == .success{
-                            Text("To Level \(completedLevel + 1)")
-                                .font(.system(size: 20))
-                        }
+                        }.scaleEffect(scaleOfSkipAdButton)
                     }
                 }
                 .onAppear{
-                    GADInterstitialAd.load(withAdUnitID: "ca-app-pub-3940256099942544/4411468910", request: GADRequest(), completionHandler: { [self] ad, error in
-                        if let error = error {
-                            print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                            return
-                        }
-                        print("ad has been fetched")
-                        interstitial = ad
-                        // Solve with UIKit
-                        interstitial?.present(fromRootViewController: UIHostingController(rootView: self))
-                    })
+                    showAd = true
+                    print("ADDEBUG: on LevelPassView, ad Display status: ", showAd)
+                    withAnimation(.easeInOut(duration: 0.750).repeatForever()){
+                        scaleOfSkipAdButton = 1.05
+                    }
+                }
+                .presentInterstitialAd(isPresented: $showAd, adUnitId: "ca-app-pub-3654508956041872/4945256256")
+                //MARK: - End of Ads
+                
+                
+                if showActionButton{
+                    fullWidthTextButton(name: actionText){
+                        Music.shared.playMainMusic(action: .resume)
+                        print("continue")
+                        triggerClickHaptic()
+                        showLevel = true
+                    }
+                    
+                    if completion == .success{
+                        Text("To Level \(completedLevel + 1)")
+                            .font(.system(size: 20))
+                    }
+                    
+                } else{
+                    ProgressView()
                 }
                 
             }
@@ -84,10 +111,12 @@ struct LevelPassView: View {
             .onAppear{
                 Music.shared.playMainMusic(action: .pause)
                 Music.shared.playLevelTransitSound(completionType: completion)
+                
+                // New Level Button loads with delay.
+                withAnimation(.bouncy(duration: 2).delay(2)) {
+                    showActionButton = true
+                }
             }
-            .onDisappear(perform: {
-                Music.shared.playMainMusic(action: .resume)
-            })
         }
     }
 }
