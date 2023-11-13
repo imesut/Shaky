@@ -34,11 +34,13 @@ struct ContentView: View {
                     fullWidthText(name: "and keep your hand steady")
                 }
                 .padding(.horizontal)
+                .accessibilityElement(children: .combine)
                 
                 Button{ showHelp = true } label: {
                     Image(systemName: "questionmark.circle.fill")
                         .resizable().scaledToFit().frame(width: 40)
                         .foregroundColor(.accentColor)
+                        .accessibilityLabel("Help")
                 }
                 
                 Spacer()

@@ -23,6 +23,7 @@ struct HorizontalZigZagAnimatedComponent<Content : View>: View {
                     }
                 }
         }
+        .accessibilityHidden(true)
     }
 }
 

@@ -35,7 +35,7 @@ struct GameLevelView: View {
         self.wayDown = gameLevel.wayDown
         self.shakingRatio = gameLevel.shakingRatio
         self.levelNumber = gameLevel.level
-//        print("Game level", self.levelNumber)
+        //        print("Game level", self.levelNumber)
     }
     
     var body: some View {
@@ -61,7 +61,9 @@ struct GameLevelView: View {
                             Spacer()
                             Text("Jump: \(tickCount) / " + String(totalMovementCount))
                                 .font(.caption)
-                        }.padding()
+                        }
+                        .padding()
+                        .accessibilityHidden(true)
                         
                         //MARK: - Ball and Walls
                         GeometryReader(content: { g2 in
@@ -78,10 +80,12 @@ struct GameLevelView: View {
                                     .position(ballPositionAnimationUnit)
                                     .animation(.linear, value: ballPositionAnimationUnit)
                                     .onAppear{
-                                        withAnimation(.linear.speed(0.15 * shakingRatio).repeatForever(autoreverses: false)){
+                                        withAnimation(.linear.speed(0.15 * shakingRatio)
+                                            .repeatForever(autoreverses: false)){
                                             ballRotateAnimationUnit = 360
                                         }
                                     }
+                                    .accessibilityHidden(true)
                             }
                             .onAppear{
                                 G2Height = g2.size.height
@@ -114,15 +118,15 @@ struct GameLevelView: View {
                                     Image(systemName: "tennis.racket").resizable().scaledToFit()
                                         .animation(.bouncy, value: tickCount)
                                     
-                                    orangeUnderline(
-                                        body: Text("JUMP")
-                                            .font(.system(size: geometry.size.height/10 - 10))
+                                    orangeUnderline(body: Text("JUMP")
+                                        .font(.system(size: geometry.size.height/10 - 10))
                                     )
                                     Spacer()
                                 }
                                 .foregroundColor(.primary)
                             }
                             .frame(height: geometry.size.height/10 - 10)
+                            .accessibilityHint("Jump: \(tickCount) / " + String(totalMovementCount))
                         }
                     }
                     .onChange(of: tickCount) { _ in
@@ -132,8 +136,6 @@ struct GameLevelView: View {
                         pointerPosition(geometry: geometry)
                     }
                 })
-                
-                
                 .onAppear{
                     accModel.startAccelerometers()
                 }
@@ -175,7 +177,6 @@ extension GameLevelView {
         // MARK: - Level Fail Logic
         //TODO: why sometimes tickCount exceed?
         let t = tickCount < totalMovementCount ? tickCount : (totalMovementCount - 1)
-        print("T:", t)
         let currentStepsWidth = levelSteps[t] * geometry.size.width
         let displacement = abs(xPosition - center) * 2 /* + ballSize / 3*/
         if displacement > currentStepsWidth {

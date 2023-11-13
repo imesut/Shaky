@@ -16,16 +16,17 @@ func fullWidthText(name: String) -> some View{
 
 func fullWidthTextButton(name : String, action : @escaping (()->()) = {} ) -> some View {
     return orangeUnderline(
-        body: Text(name.uppercased())
-            .font(.system(size: 300))
-            .lineLimit(1)
-            .lineSpacing(-10)
+        body: Button(action: {
+            action()
+        }, label: {
+            Text(name.uppercased())
+                .font(.system(size: 300))
+                .lineLimit(1)
+                .lineSpacing(-10)
+        }).foregroundColor(Color.primary)
     )
     .minimumScaleFactor(0.01)
     .padding()
-    .onTapGesture {
-        action()
-    }
 }
 
 
