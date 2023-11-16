@@ -29,6 +29,7 @@ struct GameLevelView: View {
     @State private var barAnimationUnit : Double = 2
     @State private var ballRotateAnimationUnit : Double = 0
     @State private var keepHorizontalRotateAnimationUnit : Double = 20
+    @State private var shouldFreezeGame = false
     @State var G2Height : CGFloat = 0
     private let ballSize : CGFloat = 50.0
     
@@ -47,7 +48,6 @@ struct GameLevelView: View {
             LevelPassView(completion: .fail, playedLevel: levelNumber)
             
         } else{
-            
             // Level Pass - Sucess View
             if tickCount > totalMovementCount {
                 LevelPassView(completion: .success, playedLevel: levelNumber)
@@ -88,6 +88,17 @@ struct GameLevelView: View {
                                                 }
                                         }
                                         .accessibilityHidden(true)
+                                    
+                                    if shouldFreezeGame{
+                                        VStack{
+                                            Image(systemName: "exclamationmark.octagon.fill").resizable().scaledToFit()
+                                                .padding(.horizontal, 80)
+                                                .foregroundColor(Color.red)
+                                            
+                                            ProgressView()
+                                        }
+                                    }
+                                    
                                 }
                                 .onAppear{
                                     G2Height = g2.size.height
@@ -203,16 +214,23 @@ extension GameLevelView {
         
         let xPosition = center + CGFloat($accModel.netAccP.wrappedValue) * shakingRatio
         let yPosition = tickCount != 0 ? (CGFloat((tickCount * 2) - 1) * rowHeight / 2  ) : 0
-        let ballAnimationUnit = CGPoint(x: xPosition, y: yPosition)
-        self.ballPositionAnimationUnit = ballAnimationUnit
-        
+        if !shouldFreezeGame{
+            let ballAnimationUnit = CGPoint(x: xPosition, y: yPosition)
+            self.ballPositionAnimationUnit = ballAnimationUnit
+        }
+       
         // MARK: - Level Fail Logic
         //TODO: why sometimes tickCount exceed?
         let t = tickCount < totalMovementCount ? tickCount : (totalMovementCount - 1)
         let currentStepsWidth = levelSteps[t] * geometry.size.width
-        let displacement = abs(xPosition - center) * 2 /* + ballSize / 3*/
+        let displacement = abs(xPosition - center) * 2 + ballSize /* + ballSize / 3*/
         if displacement > currentStepsWidth {
-            shouldGameFail = true
+            Music.shared.playBallSound()
+            shouldFreezeGame = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                shouldGameFail = true
+            }
+            print("game should fail")
         }
     }
     

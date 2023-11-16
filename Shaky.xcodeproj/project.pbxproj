@@ -11,9 +11,6 @@
 		FF2C6DA22AF80C4E00939447 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C6DA12AF80C4E00939447 /* ContentView.swift */; };
 		FF2C6DA42AF80C4F00939447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2C6DA32AF80C4F00939447 /* Assets.xcassets */; };
 		FF2C6DA72AF80C4F00939447 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2C6DA62AF80C4F00939447 /* Preview Assets.xcassets */; };
-		FF2C6DB12AF80C4F00939447 /* ShakyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C6DB02AF80C4F00939447 /* ShakyTests.swift */; };
-		FF2C6DBB2AF80C4F00939447 /* ShakyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C6DBA2AF80C4F00939447 /* ShakyUITests.swift */; };
-		FF2C6DBD2AF80C4F00939447 /* ShakyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C6DBC2AF80C4F00939447 /* ShakyUITestsLaunchTests.swift */; };
 		FF2C6DCA2AF80CBD00939447 /* AccelerometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C6DC92AF80CBD00939447 /* AccelerometerModel.swift */; };
 		FF3AA3AF2AFE50620059F14D /* InterstitialAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3AA3AE2AFE50620059F14D /* InterstitialAd.swift */; };
 		FF3AA3B22AFE50BE0059F14D /* InterstitialAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3AA3B12AFE50BE0059F14D /* InterstitialAdView.swift */; };
@@ -30,7 +27,7 @@
 		FF8DDCE82AFBC6B800338146 /* GameLevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8DDCE72AFBC6B800338146 /* GameLevelModel.swift */; };
 		FF8DDCEE2AFBD66000338146 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FF8DDCED2AFBD66000338146 /* FirebaseAnalytics */; };
 		FF8DDCF02AFBD66000338146 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = FF8DDCEF2AFBD66000338146 /* FirebaseAnalyticsWithoutAdIdSupport */; };
-		FF8DDCF72AFBDD7400338146 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = FF8DDCF62AFBDD7400338146 /* GoogleMobileAds */; };
+		FF8DDCF72AFBDD7400338146 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = FF8DDCF62AFBDD7400338146 /* GoogleMobileAds */; settings = {ATTRIBUTES = (Required, ); }; };
 		FFA494422AFACC1C005F440F /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA494412AFACC1C005F440F /* Shake.swift */; };
 		FFC00A502AFBDF62003230CB /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC00A4F2AFBDF62003230CB /* Storage.swift */; };
 		FFC00A522AFBE332003230CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFC00A512AFBE332003230CB /* GoogleService-Info.plist */; };
@@ -64,10 +61,7 @@
 		FF2C6DA32AF80C4F00939447 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF2C6DA62AF80C4F00939447 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF2C6DAC2AF80C4F00939447 /* ShakyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShakyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF2C6DB02AF80C4F00939447 /* ShakyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyTests.swift; sourceTree = "<group>"; };
 		FF2C6DB62AF80C4F00939447 /* ShakyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShakyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF2C6DBA2AF80C4F00939447 /* ShakyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyUITests.swift; sourceTree = "<group>"; };
-		FF2C6DBC2AF80C4F00939447 /* ShakyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FF2C6DC92AF80CBD00939447 /* AccelerometerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerModel.swift; sourceTree = "<group>"; };
 		FF3AA3AE2AFE50620059F14D /* InterstitialAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAd.swift; sourceTree = "<group>"; };
 		FF3AA3B12AFE50BE0059F14D /* InterstitialAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAdView.swift; sourceTree = "<group>"; };
@@ -124,8 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				FF2C6D9E2AF80C4E00939447 /* Shaky */,
-				FF2C6DAF2AF80C4F00939447 /* ShakyTests */,
-				FF2C6DB92AF80C4F00939447 /* ShakyUITests */,
 				FF2C6D9D2AF80C4E00939447 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -144,13 +136,13 @@
 			isa = PBXGroup;
 			children = (
 				FF8285972AFCE2C200BB2271 /* Info.plist */,
+				FFC00A512AFBE332003230CB /* GoogleService-Info.plist */,
 				FF2C6D9F2AF80C4E00939447 /* ShakyApp.swift */,
 				FFF8EC672AFAE6E00018E860 /* Model */,
 				FFF8EC662AFAE6D00018E860 /* View */,
 				FFF8EC6D2AFAF3090018E860 /* Utils */,
 				FF2C6DA32AF80C4F00939447 /* Assets.xcassets */,
 				FF88C24F2AFD3208007EDB81 /* Music */,
-				FFC00A512AFBE332003230CB /* GoogleService-Info.plist */,
 				FF2C6DA52AF80C4F00939447 /* Preview Content */,
 			);
 			path = Shaky;
@@ -162,23 +154,6 @@
 				FF2C6DA62AF80C4F00939447 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		FF2C6DAF2AF80C4F00939447 /* ShakyTests */ = {
-			isa = PBXGroup;
-			children = (
-				FF2C6DB02AF80C4F00939447 /* ShakyTests.swift */,
-			);
-			path = ShakyTests;
-			sourceTree = "<group>";
-		};
-		FF2C6DB92AF80C4F00939447 /* ShakyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FF2C6DBA2AF80C4F00939447 /* ShakyUITests.swift */,
-				FF2C6DBC2AF80C4F00939447 /* ShakyUITestsLaunchTests.swift */,
-			);
-			path = ShakyUITests;
 			sourceTree = "<group>";
 		};
 		FF3AA3B02AFE506C0059F14D /* AdViews */ = {
@@ -256,6 +231,7 @@
 				FF2C6D982AF80C4E00939447 /* Sources */,
 				FF2C6D992AF80C4E00939447 /* Frameworks */,
 				FF2C6D9A2AF80C4E00939447 /* Resources */,
+				FFA524702B03FB8100406001 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -386,6 +362,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FFA524702B03FB8100406001 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FF2C6D982AF80C4E00939447 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -415,7 +416,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF2C6DB12AF80C4F00939447 /* ShakyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,8 +423,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF2C6DBB2AF80C4F00939447 /* ShakyUITests.swift in Sources */,
-				FF2C6DBD2AF80C4F00939447 /* ShakyUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +568,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Shaky/Preview Content\"";
@@ -582,6 +581,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = accelerometer;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -602,6 +602,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Shaky/Preview Content\"";
@@ -614,6 +615,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = accelerometer;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (

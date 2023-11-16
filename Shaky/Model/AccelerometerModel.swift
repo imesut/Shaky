@@ -24,7 +24,7 @@ class AccelerometerModel : ObservableObject {
     func startAccelerometers() {
         if self.motion.isAccelerometerAvailable {
             // 50 hz is iOS default rate, 10 hz is to slow, 2*-25 is okay, more the hz, more fluid animation
-            let hz = 1.0 / 25.0
+            let hz = 1.0 / 50.0//25.0
             self.motion.accelerometerUpdateInterval = hz
             self.motion.startAccelerometerUpdates()
             self.timer = Timer(fire: Date(), interval: (hz), repeats: true, block: { (timer) in
