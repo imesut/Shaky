@@ -18,29 +18,23 @@ struct GameLevel{
 func getLevelData(level : Int) -> GameLevel {
     let maxAllowedShaking = 5.00
     let maxPossibleWidth = 0.98
-    //                          1,  2,   3,   4,   5,   6,   7,   8,   9,  10
     let desiredDiffulties = [
-        equallyDistributedValues(start: 40, stop: 300, count: 10),
+        equallyDistributedValues(start: 80, stop: 250, count: 10),
         equallyDistributedValues(start: 120, stop: 350, count: 10),
-        equallyDistributedValues(start: 150, stop: 350, count: 10),
-        equallyDistributedValues(start: 180, stop: 350, count: 10),
-        equallyDistributedValues(start: 210, stop: 290, count: 10),
-        equallyDistributedValues(start: 230, stop: 250, count: 10),
-        equallyDistributedValues(start: 250, stop: 290, count: 10),
-        equallyDistributedValues(start: 270, stop: 350, count: 10),
-        equallyDistributedValues(start: 300, stop: 330, count: 10),
-        equallyDistributedValues(start: 320, stop: 330, count: 10)
+        equallyDistributedValues(start: 200, stop: 350, count: 10),
+        equallyDistributedValues(start: 250, stop: 400, count: 10)
     ].flatMap { $0 }
+    let minWidths = [0.75, 0.70, 0.65, 0.60, 0.50, 0.45, 0.40, 0.35, 0.30, 0.25]
     
-    let desiredDifficulty = Double(desiredDiffulties[(level - 1) % 100])
+    let desiredDifficulty = Double(desiredDiffulties[(level - 1) % desiredDiffulties.count])
     let levelCount = (level - 1) % 5 * 3 + 3
-    let minWidth = [0.90, 0.80, 0.70, 0.60, 0.55, 0.50, 0.45, 0.40, 0.47, 0.53][level % 10]
+    let minWidth = minWidths[level % 10]
     let maxWidth = [
         minWidth,
         maxPossibleWidth,
-        minWidth + 0.30 < 1.00 ? minWidth + 0.30 : maxPossibleWidth,
-        minWidth + 0.20 < 1.00 ? minWidth + 0.20 : maxPossibleWidth,
-        minWidth + 0.10 < 1.00 ? minWidth + 0.10 : maxPossibleWidth
+        minWidth + 0.30 < maxPossibleWidth ? minWidth + 0.30 : maxPossibleWidth,
+        minWidth + 0.20 < maxPossibleWidth ? minWidth + 0.20 : maxPossibleWidth,
+        minWidth + 0.10 < maxPossibleWidth ? minWidth + 0.10 : maxPossibleWidth
     ].randomElement()!
     
     // Splitted for better Compiler check time

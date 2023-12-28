@@ -222,7 +222,8 @@ extension GameLevelView {
         // MARK: - Level Fail Logic
         //TODO: why sometimes tickCount exceed?
         let t = tickCount < totalMovementCount ? tickCount : (totalMovementCount - 1)
-        let currentStepsWidth = levelSteps[t] * geometry.size.width
+        // Let's make the minimum weight 1.5 times of the ball size to comply all the iPhones
+        let currentStepsWidth = max(levelSteps[t] * geometry.size.width, ballSize * 1.5)
         let displacement = abs(xPosition - center) * 2 + ballSize /* + ballSize / 3*/
         if displacement > currentStepsWidth {
             Music.shared.playBallSound()
